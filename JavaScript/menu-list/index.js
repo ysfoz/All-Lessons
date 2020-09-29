@@ -82,18 +82,18 @@ const menu = [
 ];
 
 window.addEventListener("DOMContentLoaded", function () {
-  displayMenuItems();
+  displayMenuItems(menu);
   displayCategoryItems();
 });
 
 const sectionElement = document.querySelector(".section-center");
 const categoryElement = document.querySelector(".btn-container");
 
-function displayMenuItems() {
+function displayMenuItems(menuList) {
   let sectionContent = "";
 
   // map ile ?
-  menu.forEach((item) => {
+  menuList.forEach((item) => {
     sectionContent += `<article class="menu-item">
         <img src=${item.img} alt="menu item" class="photo" />
         <div class="item-info">
@@ -126,4 +126,27 @@ function displayCategoryItems() {
   });
 
   categoryElement.innerHTML = categoryContent;
+
+  // =============
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach((button) => {
+    // event
+    button.addEventListener("click", function (e) {
+      // Yemek filtreleme işlemi gerçekleşecek.
+      const selectedCategoryName = e.target.getAttribute("data-id");
+      const filteredMenu = menu.filter(
+        (item) => item.category === selectedCategoryName
+      );
+
+      console.log("selectedCategoryName: " + selectedCategoryName);
+
+      if (selectedCategoryName == "all") {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(filteredMenu);
+      }
+    });
+  });
 }
