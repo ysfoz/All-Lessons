@@ -5,7 +5,7 @@ import './App.css';
 import {SearchBox} from "./components/SearchBox";
 import {CardList} from "./components/CardList";
 
-const apiKey = ""; //temporary
+const apiKey = "c69cee1bc9f54976ad4ca3a2600ad15c"; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
@@ -19,7 +19,7 @@ function App() {
       axios.get(
           baseUrl, {params: {
           api_key: apiKey,
-          page: 1,
+          page: 20,
           query: searchKeyword
           }}
       )

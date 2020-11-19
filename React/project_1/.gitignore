@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /apiKey.js
+/notes-10.11.20.md
 
 # testing
 /coverage
