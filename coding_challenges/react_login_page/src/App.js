@@ -29,21 +29,48 @@ const handleConfirm = e => setConfirmPassword(e.target.value)
 
 const changeCheck = () => setChecked(s => !s)
 
+const letters = /^[0-9a-zA-Z,'@','.']+$/;
+const SignList = ['!','#','$','%','^','*','+','-','~',]
+
+const checkPassword = () => {
+  const checkList = []
+  for(let i = 0 ; i < password.length;i++){
+    if(password[i] == password[i].toLowerCase()){
+      checkList.push(password[i])
+    }
+    if(password[i] == password[i].toUpperCase()){
+      checkList.push(password[i])
+    }
+    if(isNaN(password[i])) {
+      checkList.push(password[i])
+    }
+    if(password[i] in SignList){
+      checkList.push(password[i])
+    }
+  }
+  return  checkList.length < 4 ? true : false
+}
+
+
 const allControl = () => {
-if (!firstName || !lastName || !email){
-  alert('hop')
+if (!firstName || !lastName || !email || !password || !confirmPassword || !isChecked) {
+  alert('All Areas muss be filled')
+}else if(password !== confirmPassword) {
+  alert('Passwords not match')
+}else if (email.indexOf('.') !== (email.length - 3) && email.indexOf('.') !== (email.length - 4)) {
+alert('invalid email adress(.)')
+}else if(!email.match(letters)){
+  alert('invalid charecters in email')
+}else if(!email.includes('@',1) || email.indexOf('@') >  email.length - 5 ){
+  alert('invalid email(@)')
+}else if (password.length < 8){
+  alert('please enter minimum 8 character for password')
+}
+else if(checkPassword) {
+  alert('you muss enter capital letter and lowercase letters and minimum one special character')
 }
 }
-// Check first name that it should not be empty.
-// 2. Check last name that it should not be empty.
-// 3. Check the email address that it should not be empty and has "@" and also has two or three
-// letter extension(like .co or .com ).
-// 4. Check the password that it should not be empty and has numbers, capital letter and
-// lowercase letters and minimum one special character( .!? .etc) and minimum 8 characters.
-// 5. Check the password is match with the password confirmation field.
-// 6. Check privacy policy is checked.
-// If pass the all validations, user click the register button and alert Reg stered Succesfully!
-// otherwise will alert what's the wrong!
+
   return (
     <StyledContainer>
       <Styledh1>Welcome to Home</Styledh1>
@@ -78,6 +105,7 @@ if (!firstName || !lastName || !email){
         placeholder='Password'
         value={password.value}
         onChange ={handleChangePassword}
+        minlength="8"
         />
 
         <StyledInput 
