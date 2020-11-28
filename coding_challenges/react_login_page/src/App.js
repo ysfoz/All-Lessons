@@ -16,7 +16,8 @@ function App() {
   const [password,setPassword] = useState('')
   const [confirmPassword,setConfirmPassword] = useState('')
   const [isChecked,setChecked] = useState()
-
+  const [isPassTrue,setPass] = useState()
+console.log(isPassTrue)
 const handleChangefirstN = e => setFirstName(e.target.value)
 
 const handleChangeLastN = e => setLastName(e.target.value)
@@ -33,24 +34,34 @@ const letters = /^[0-9a-zA-Z,'@','.']+$/;
 const SignList = ['!','#','$','%','^','*','+','-','~',]
 
 const checkPassword = () => {
-  const checkList = []
-  for(let i = 0 ; i < password.length;i++){
-    if(password[i] == password[i].toLowerCase()){
-      checkList.push(password[i])
-    }
-    if(password[i] == password[i].toUpperCase()){
-      checkList.push(password[i])
-    }
-    if(isNaN(password[i])) {
-      checkList.push(password[i])
-    }
-    if(password[i] in SignList){
-      checkList.push(password[i])
+  let counter1 = 0;
+  let counter2 = 0;
+  let counter3 = 0;
+  let counter4 = 0;
+  for (let i = 0; i < password.length; i++) {
+    if (!isNaN(password[i])) {
+      counter3 += 1;
+    } else if (SignList.includes(password[i])) {
+      counter4 += 1;
+    } else if (password[i] === password[i].toLowerCase()) {
+      counter1 += 1;
+    } else if (password[i] === password[i].toUpperCase()) {
+      counter2 += 1;
     }
   }
-  return  checkList.length < 4 ? true : false
-}
-
+  console.log(
+    "sayi :",
+    counter3,
+    "buyuk :",
+    counter2,
+    "kucuk:",
+    counter1,
+    "isaret:",
+    counter4
+    );
+    (counter1 < 1 || counter2 < 1 || counter3 < 1 || counter4 < 1) ? setPass(true) : setPass(false);
+};
+// 1234Qw!2  1234QWERasdf!@#$
 
 const allControl = () => {
 if (!firstName || !lastName || !email || !password || !confirmPassword || !isChecked) {
@@ -66,7 +77,7 @@ alert('invalid email adress(.)')
 }else if (password.length < 8){
   alert('please enter minimum 8 character for password')
 }
-else if(checkPassword) {
+else if(isPassTrue) {
   alert('you muss enter capital letter and lowercase letters and minimum one special character')
 }
 }
@@ -118,7 +129,10 @@ else if(checkPassword) {
 
         <StyledButton
         type='submit'
-        onClick={allControl}
+        onClick={() => {
+                      allControl()
+                      checkPassword()
+                    }}
         >Register
         </StyledButton>
 
