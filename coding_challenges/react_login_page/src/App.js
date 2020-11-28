@@ -7,7 +7,8 @@ import {
   StyledCheck,
   StyledSpan,
   Styledh1,
-  StyledImg
+  StyledImg,
+  Styledp
 } from "./App.style.js";
 
 import Logo from './Logo.png'
@@ -141,7 +142,7 @@ else if(checkPassword()) {
         <StyledSpan>I accept the Privacy Policy</StyledSpan>
         </label>
       </Styledform>
-      <p>Already have an account? Login.</p>
+      <Styledp>Already have an account? Login.</Styledp>
     </StyledContainer>
   );
 }

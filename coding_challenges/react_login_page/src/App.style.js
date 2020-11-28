@@ -1,29 +1,20 @@
 import styled from 'styled-components';
 
 export const Styledform= styled.form`
-/* background-color:rgba(0,0,0,0.4); */
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
 `
-
 export const StyledInput = styled.input`
 background-color:#efefef;
 width:30%;
-height:30px;
+height:2rem;
 border:1px solid black;
 border-radius:3px;
-margin-bottom:10px;
+margin-bottom:1rem;
 `
 
 export const StyledContainer = styled.div`
-background-color:rgba(0,0,0,0.8);
-display:flex;
-flex-direction:column;
-height:100vh;
-justify-content:center;
-align-content:center; 
 text-align:center;
 color:white;
 
@@ -31,14 +22,12 @@ color:white;
 
 export const StyledButton = styled.button`
 background-color:rgba(255,215,0,0.8);
-width:20%;
-height:40px;
+width:30%;
+height:2rem;
 outline:none;
 border:none;
-border-radius:10px;
+border-radius:3px;
 margin:10px;
-
-
 `
 
 export const StyledCheck = styled.input`
@@ -51,12 +40,17 @@ font-size:16px;
 `
 
 export const Styledh1 = styled.h1`
-font-size:50px;
+font-size:3.5rem;
+margin-top:-3rem;
 `
 
 export const StyledImg = styled.img`
-width:15rem;
-align-self:center
+width:20rem;
+align-self:center;
+`
+
+export const Styledp = styled.p`
+
 `
 
 
