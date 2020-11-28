@@ -6,8 +6,11 @@ import {
   Styledform,
   StyledCheck,
   StyledSpan,
-  Styledh1
+  Styledh1,
+  StyledImg
 } from "./App.style.js";
+
+import Logo from './Logo.png'
 
 function App() {
   const [firstName,setFirstName] = useState('')
@@ -16,8 +19,8 @@ function App() {
   const [password,setPassword] = useState('')
   const [confirmPassword,setConfirmPassword] = useState('')
   const [isChecked,setChecked] = useState()
-  const [isPassTrue,setPass] = useState()
-console.log(isPassTrue)
+ 
+
 const handleChangefirstN = e => setFirstName(e.target.value)
 
 const handleChangeLastN = e => setLastName(e.target.value)
@@ -49,19 +52,10 @@ const checkPassword = () => {
       counter2 += 1;
     }
   }
-  console.log(
-    "sayi :",
-    counter3,
-    "buyuk :",
-    counter2,
-    "kucuk:",
-    counter1,
-    "isaret:",
-    counter4
-    );
-    (counter1 < 1 || counter2 < 1 || counter3 < 1 || counter4 < 1) ? setPass(true) : setPass(false);
+
+    return (counter1 < 1 || counter2 < 1 || counter3 < 1 || counter4 < 1) ? true : false;
 };
-// 1234Qw!2  1234QWERasdf!@#$
+
 
 const allControl = () => {
 if (!firstName || !lastName || !email || !password || !confirmPassword || !isChecked) {
@@ -77,14 +71,17 @@ alert('invalid email adress(.)')
 }else if (password.length < 8){
   alert('please enter minimum 8 character for password')
 }
-else if(isPassTrue) {
+else if(checkPassword()) {
   alert('you muss enter capital letter and lowercase letters and minimum one special character')
+}else {
+  alert('welcome to website')
 }
 }
 
   return (
     <StyledContainer>
-      <Styledh1>Welcome to Home</Styledh1>
+      <StyledImg src={Logo}/>
+      <Styledh1>Discover the world of Audi</Styledh1>
       <Styledform>
         <StyledInput 
         type="text" 
@@ -129,10 +126,7 @@ else if(isPassTrue) {
 
         <StyledButton
         type='submit'
-        onClick={() => {
-                      allControl()
-                      checkPassword()
-                    }}
+        onClick={allControl}
         >Register
         </StyledButton>
 

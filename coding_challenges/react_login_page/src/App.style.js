@@ -30,9 +30,14 @@ color:white;
 `
 
 export const StyledButton = styled.button`
-background-color:yellow;
+background-color:rgba(255,215,0,0.8);
 width:20%;
 height:40px;
+outline:none;
+border:none;
+border-radius:10px;
+margin:10px;
+
 
 `
 
@@ -46,7 +51,12 @@ font-size:16px;
 `
 
 export const Styledh1 = styled.h1`
-font-size:50px
+font-size:50px;
+`
+
+export const StyledImg = styled.img`
+width:15rem;
+align-self:center
 `
 
 
