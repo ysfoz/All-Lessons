@@ -42,6 +42,12 @@ npm install express ile express dosyasi olusturmus oluuz. oncesinde init yapmak 
     "start":"nodemon", 
     seklinde npm start komutunu eklemis olduk. nodemon anlik degisiklikleri bize gosteren bir paket. oncesinde devdepencies e onu kurduk. start i onunla calistir demis oluyoruz. main olarak hangi dosyayi tanimlamissak onu calistiracaktir. ama nodemondea sonra bir dosya adi girersek onu calistirir.
 
+# proje olustururken cagirdigimiz port u bulut sistemine atarken ayarlamamiz lazim yoksa calismaz.
+
+## views klasoru olusturlarak icerisine template olusturulur. cok sayida template olsada pug ve EJS gnelde tercih edilenler.
+
+routes icerisinde get ile cagirdigimiz fonksiyonlari yazip index.js ten import ediyoruz.
+
 
 
 
