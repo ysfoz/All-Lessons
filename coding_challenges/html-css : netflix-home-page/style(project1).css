@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/998c1c50-6aaa-4795-ab62-9190a025d529/b9883521-f439-4c16-b5eb-b1719e2fece1/ZA-en-20191203-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    color: white;
+    
+}
+#title{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    font-size: 27px;
+   
+}
+#flix{
+    color: red;
+}
+#container{
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 30px 100px;
+
+}
+#explanation{
+    font-size: 23px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 15px;   
+}
+#survey-form{
+    width: 500px;
+    height: auto;
+    margin: auto;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#name,
+#email,
+#age,
+#content {
+    margin-top: 16px;
+    height: 36px;
+    width: 410px;
+    border: none;
+    padding: 10px;
+
+}
+.box{
+    margin-top: 20px;
+    margin-left: 35px;
+    margin-right: 40px;
+}
+.box2{
+    margin-top: 20px;
+    margin-left: 35px;
+    margin-right: 40px;
+}
+
+#movie,
+#gender {
+    margin-top: 20;
+}
+#feedback{
+    margin: 20px 35px 10px 40px;
+    
+}
+#f-back{
+    margin-top: 10px;
+}
+#submit{
+    background-color: red;
+    width: 180px;
+    height: 50px;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    margin: 30px 20px 30px 160px;
+    border: none;
+    font-size: large;
+
+}
