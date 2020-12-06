@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(6, 18, 26);
+    background-size: 100%;    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.container {
+    width: 60%;
+    min-height: 350px;
+    border: 10px groove rgba(206, 228, 82, 0.5);
+    margin: 250px auto 150px;
+    padding: 20px;
+    background-color: rgba(27, 174, 211, 0.8);
+    & #portre{
+        width: 20%;
+        float: left;
+        margin: 20px 20px 10px 0;
+        &:hover{
+            box-shadow:2px 2px rgb(4, 24, 61);
+        }
+    }
+    & .article{
+        
+        & #title{
+            margin-bottom: 20px;
+            &::first-letter{
+                color: rgb(104, 16, 57);
+                font-size: 50px;
+            }
+            &:hover{
+                text-shadow: 1px 1px rgba($color: #000000, $alpha: 0.3);
+            }
+        }
+        & #subtitle{
+            margin-bottom: 10px;
+            color: rgba($color: #000000, $alpha: 0.8);
+            text-align: end;
+        }
+        & #description{
+            color:rgb(85, 81, 81);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        & #motto{
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgba(3, 24, 46, 0.8);
+            text-shadow: 1px 1px rgba(146, 9, 146, 0.7);
+            text-align: center;
+        }
+    }
+
+   
+}
+
+
+#poem {
+    font-family: 'Cookie', cursive;
+    font-size: 20pt;
+    text-shadow: 7px 10px 5px black;    
+    word-spacing: 2px;  
+    color: cornsilk;
+}

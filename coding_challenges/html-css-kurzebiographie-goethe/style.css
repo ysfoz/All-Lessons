@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #06121a;
+  background-size: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 60%;
+  min-height: 350px;
+  border: 10px groove rgba(206, 228, 82, 0.5);
+  margin: 250px auto 150px;
+  padding: 20px;
+  background-color: rgba(27, 174, 211, 0.8);
+}
+
+.container #portre {
+  width: 20%;
+  float: left;
+  margin: 20px 20px 10px 0;
+}
+
+.container #portre:hover {
+  -webkit-box-shadow: 2px 2px #04183d;
+          box-shadow: 2px 2px #04183d;
+}
+
+.container .article #title {
+  margin-bottom: 20px;
+}
+
+.container .article #title::first-letter {
+  color: #681039;
+  font-size: 50px;
+}
+
+.container .article #title:hover {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container .article #subtitle {
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: end;
+}
+
+.container .article #description {
+  color: #555151;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.container .article #motto {
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgba(3, 24, 46, 0.8);
+  text-shadow: 1px 1px rgba(146, 9, 146, 0.7);
+  text-align: center;
+}
+
+#poem {
+  font-family: 'Cookie', cursive;
+  font-size: 20pt;
+  text-shadow: 7px 10px 5px black;
+  word-spacing: 2px;
+  color: cornsilk;
+}
+/*# sourceMappingURL=style.css.map */
