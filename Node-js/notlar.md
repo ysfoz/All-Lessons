@@ -48,6 +48,12 @@ npm install express ile express dosyasi olusturmus oluuz. oncesinde init yapmak 
 
 routes icerisinde get ile cagirdigimiz fonksiyonlari yazip index.js ten import ediyoruz.
 
+### npx express-generator
+bu komut yapiyi komple kurulu getiriyor. ama views i jade geliyor
+### npx express-generator --view ejs
+bu komut ile ejs geliyor
+
+
 
 
 
