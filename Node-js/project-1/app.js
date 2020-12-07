@@ -10,7 +10,7 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-//connect to db
+//connect to db .
 // postgres://user:pass@example.com:5432/dbname
 
 const { DB_USERNAME, DB_PASSWORD, DB_HOSTNAME, DB_PORT, DB_NAME } = process.env;
