@@ -18,7 +18,7 @@ sequelize
   // ORM table
 
   const UserModel = sequelize.define("recruiter", // tablonun adi, burda bu isim db de tekil olsa bile sequelize bunu 
-  // cogul gibi kullanir, bu yuzden hata olusur.tabloda cogul yapmak gerekir
+  // cogul gibi kullanir, bu yuzden hata olusur.tabloda cogul yapmak gerekir, yada altta options blolumune freezeTableName:true olacak
   {
     //attributes tabloda yer alanlar
     firstName:{
