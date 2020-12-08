@@ -10,3 +10,7 @@ exports.get_users = async (req, res, next) =>{
   }
 
   };
+
+exports.add_user = (req,res) => {
+  res.render('addUser')
+}
