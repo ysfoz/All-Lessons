@@ -1,4 +1,6 @@
-exports.authRegister = (req, res) => {
+const User = require('../models/UserModel')
+
+exports.authRegister = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     console.log(
       "Fields:",
@@ -11,7 +13,14 @@ exports.authRegister = (req, res) => {
     // TODO2: check already registered
     // TODO3: crpyt password
     // TODO4: save the user to DB
-  
+
+    const user = new User ({
+      firstName,
+      lastName,
+      email,
+      password
+    });
+    await user.save();
     res.send("Register Completed.");
   };
   

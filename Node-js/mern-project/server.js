@@ -7,7 +7,7 @@ const router =require('./routes/router')
 connectDB()
 
 app.use(express.json())
-app.use('/',router)
+app.use('/api',router)
 
 app.listen(PORT,() => {
     console.log(`listening port ${PORT}`)
