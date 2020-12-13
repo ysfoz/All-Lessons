@@ -1,36 +1,44 @@
-const User = require('../models/UserModel')
-const bcrypt =require('bcryptjs')
+const User = require("../models/UserModel");
+const bcrypt = require("bcryptjs");
+const { validationResult } = require("express-validator");
 
 exports.authRegister = async (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
-    console.log(
-      "Fields:",
-      firstName,
-      lastName,
-      email,
-      password
-    );
-    // TODO1: Validate the fields
-    // TODO2: check already registered
-    // TODO3: crpyt password
-    // TODO4: save the user to DB
+  const { firstName, lastName, email, password } = req.body;
 
-    const salt = await bcrypt.genSalt(10)
-    const newPassword = await bcrypt.hash(password,salt)
+  // TODO1: Validate the fields
+  // TODO2: check already registered
+  // TODO3: crpyt password
+  // TODO4: save the user to DB
 
-    const user = new User ({
-      firstName,
-      lastName,
-      email,
-      password:newPassword
-    });
-    await user.save();
-    res.send("Register Completed.");
-  };
-  
-  exports.authLogin = (req, res) => {
-    // TODO: Auth.
-    // TODO: Login func.
-    res.send("Login Completed");
-  };
-  
+  // validate the fields
+
+  const validationErr = validationResult(req);
+  if (validationErr.errors.length > 0) {
+    return res.status(400).json({ errors: validationErr.array() });
+  }
+
+  const userData = await User.findOne({ email });
+  if (userData) {
+    return res
+      .status(400)
+      .json({ errors: [{ message: "user already exist" }] });
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  const newPassword = await bcrypt.hash(password, salt);
+
+  const user = new User({
+    firstName,
+    lastName,
+    email,
+    password: newPassword,
+  });
+  await user.save();
+  res.send("Register Completed.");
+};
+
+exports.authLogin = (req, res) => {
+  // TODO: Auth.
+  // TODO: Login func.
+  res.send("Login Completed");
+};
