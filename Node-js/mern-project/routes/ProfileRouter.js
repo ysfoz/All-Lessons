@@ -1,4 +1,5 @@
 const express = require('express');
+const auth = require('../middleware/authMiddleware')
 const router = express.Router();
 
 
@@ -10,8 +11,8 @@ const router = express.Router();
  * @access  Private
  */
 
- router.get('/',(req,res) => {
-     res.send('private area')
+ router.get('/',auth,(req,res) => {
+     res.send(req.decodedUser)
  })
 
  module.exports = router;
