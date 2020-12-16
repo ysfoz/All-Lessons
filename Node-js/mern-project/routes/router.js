@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const AuthRouter = require("./AuthRouter");
 const ProfileRouter = require("./ProfileRouter");
-// const BookRouter = require("./BookRouter");
+const BookRouter = require("./BookRouter");
 
 // Only /api endpoint
 
@@ -23,6 +23,6 @@ router.use("/profile", ProfileRouter);
  * @route /api/book
  * @desc Route for Book
  */
-// router.use("/books", BookRouter);
+router.use("/books", BookRouter);
 
 module.exports = router;
