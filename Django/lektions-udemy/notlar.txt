@@ -1,0 +1,59 @@
+Django komutları
+
+1- Env kurulumu
+python -m venv <dosya adi>  
+
+
+2- active etmek icin - (windows ta farklı)
+Source < proje adi >/bin/activate 
+
+3- Django kurmak icin
+Pip install django
+
+4- kurulu paketleri görmek icin
+pip freeze
+
+5-requirement.txt olusturmak,paketleri icine atmak
+pip freeze > ./requirement.txt
+
+6-projeyi oluşturmak icin
+django-admin startproject < dosya adi >
+
+7- app oluşturmak icin
+python manage.py startapp < app adi >
+
+8- serveri baslatmak icin
+python manage.py runserver
+
+9- Migration file kurmak icin
+python manage.py migrate
+
+10- superadmin oluşturmak icin
+python manage.py createsuperuser
+
+11- oluşturulan modeli register etme
+python manage.py makemigrations
+
+-------------------------------------
+
+Django Shell Komutlari
+
+1-  shell e gecis icin
+python manage.py shell
+
+2- default gelen user klasini cagiriyoruz
+from django.contrib.auth.models import User 
+
+3- yeni bir kullanici olusturduk, ama bu sekilde sifre kripto olamadan olusyor
+newUser = User(username= 'ali',password = '123')
+
+4- bu seklide password kriptolu olur
+newUser2 = User('ahmet')
+newUser2.set_password('123)
+
+5- yapilan islmeleri DB ye gondermek icin 
+.save()
+
+6-bos bir kullanici olusturup degerler sonradan da verilebilir
+newUser3 = User()
+newUser3.username = ('mehmet) 
